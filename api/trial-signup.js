@@ -1,10 +1,7 @@
 import { MongoClient } from 'mongodb';
 
-<<<<<<< HEAD
-=======
 const MONGODB_URI = process.env.MONGODB_URI;
 
->>>>>>> 575c91f88087b846055a393b2d3afcbfcadfbf26
 let cachedClient = null;
 let cachedDb = null;
 
@@ -13,11 +10,7 @@ async function connectToDatabase() {
     return { client: cachedClient, db: cachedDb };
   }
 
-<<<<<<< HEAD
-  const client = new MongoClient(process.env.MONGODB_URI);
-=======
   const client = new MongoClient(MONGODB_URI);
->>>>>>> 575c91f88087b846055a393b2d3afcbfcadfbf26
   await client.connect();
   
   const db = client.db('waitlist');
@@ -29,12 +22,6 @@ async function connectToDatabase() {
 }
 
 export default async function handler(req, res) {
-<<<<<<< HEAD
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-=======
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -43,7 +30,6 @@ export default async function handler(req, res) {
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   );
->>>>>>> 575c91f88087b846055a393b2d3afcbfcadfbf26
 
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -63,7 +49,6 @@ export default async function handler(req, res) {
         error: 'Name, email, and organization are required fields' 
       });
     }
-<<<<<<< HEAD
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -73,10 +58,7 @@ export default async function handler(req, res) {
       });
     }
 
-=======
-    
     // Connect to database
->>>>>>> 575c91f88087b846055a393b2d3afcbfcadfbf26
     const { db } = await connectToDatabase();
     const collection = db.collection('join_waitlist');
     
@@ -90,17 +72,11 @@ export default async function handler(req, res) {
       submittedAt: submittedAt || new Date().toISOString(),
       type: type || 'free-trial',
       status: 'pending',
-<<<<<<< HEAD
       createdAt: new Date(),
       userAgent: req.headers['user-agent'],
       ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
     };
 
-=======
-      createdAt: new Date()
-    };
-    
->>>>>>> 575c91f88087b846055a393b2d3afcbfcadfbf26
     // Insert into MongoDB
     const result = await collection.insertOne(signupData);
     
@@ -110,11 +86,7 @@ export default async function handler(req, res) {
       email: signupData.email,
       organization: signupData.organization
     });
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 575c91f88087b846055a393b2d3afcbfcadfbf26
     res.status(201).json({ 
       message: 'Trial signup submitted successfully',
       id: result.insertedId
