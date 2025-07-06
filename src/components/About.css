@@ -21,8 +21,14 @@
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  margin-top: 3rem;
 }
 
 .stat {
@@ -125,10 +131,57 @@
   }
 }
 
+.problem-highlight,
+.solution-preview,
+.impact-statement {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+}
+
+.problem-highlight:hover,
+.solution-preview:hover,
+.impact-statement:hover {
+  transform: translateY(-3px);
+  border-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.problem-highlight h3,
+.solution-preview h3,
+.impact-statement h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.problem-highlight {
+  border-left: 4px solid #ffffff;
+}
+
+.solution-preview {
+  border-left: 4px solid #cccccc;
+}
+
+.impact-statement {
+  border-left: 4px solid #888888;
+}
+
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .about-right {
+    order: -1;
   }
 
   .about-stats {
@@ -138,6 +191,5 @@
 
   .about-image {
     height: 300px;
-    order: -1;
   }
 }
