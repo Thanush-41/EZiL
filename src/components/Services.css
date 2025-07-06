@@ -1,0 +1,594 @@
+.services {
+  padding: 5rem 0;
+  background: #000000;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: #000000;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #ffffff;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border-color: #000000;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.service-card:hover .service-icon {
+  opacity: 1;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-title {
+  color: #000000;
+}
+
+.service-description {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-description {
+  color: #666666;
+}
+
+.service-btn {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  transform: translateY(-2px);
+  background: #000000;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.service-card:hover .service-btn {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.service-card:hover .service-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #000000;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 2px solid #ffffff;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 2rem 1rem;
+  border-bottom: 2px solid #ffffff;
+}
+
+.modal-icon {
+  font-size: 2.5rem;
+}
+
+.modal-title {
+  flex: 1;
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-section {
+  margin-bottom: 2rem;
+}
+
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-section h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.modal-section p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.modal-section ul,
+.modal-section ol {
+  color: #cccccc;
+  padding-left: 1.5rem;
+}
+
+.modal-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  padding: 1rem 2rem 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  border-top: 2px solid #ffffff;
+}
+
+.modal-btn-primary,
+.modal-btn-secondary {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #ffffff;
+}
+
+.modal-btn-primary {
+  background: #ffffff;
+  color: #000000;
+}
+
+.modal-btn-primary:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.modal-btn-secondary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.modal-btn-secondary:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-content {
+    margin: 1rem;
+    max-height: 95vh;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .modal-footer {
+    padding: 1rem 1.5rem 1.5rem;
+    flex-direction: column;
+  }
+
+  .modal-btn-primary,
+  .modal-btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Enhanced Workflow Section */
+.workflow-section {
+  margin-top: 5rem;
+  padding: 3rem 0;
+}
+
+.workflow-container {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.workflow-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+}
+
+.workflow-step-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.workflow-step {
+  background: linear-gradient(135deg, #111 0%, #222 100%);
+  border: 2px solid #333;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  min-height: 280px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.workflow-step:hover {
+  transform: translateY(-10px);
+  border-color: #ffffff;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #222 0%, #333 100%);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.step-number {
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  color: #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.workflow-step:hover .step-title {
+  color: #ffffff;
+}
+
+.step-description {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.step-details {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.step-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.connector-line {
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, #333 0%, #ffffff 50%, #333 100%);
+  position: relative;
+}
+
+.connector-arrow {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-left: -0.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Mobile workflow */
+.workflow-mobile {
+  display: none;
+}
+
+.workflow-step-mobile {
+  background: linear-gradient(135deg, #111 0%, #222 100%);
+  border: 2px solid #333;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.workflow-step-mobile:hover {
+  border-color: #ffffff;
+  transform: translateX(5px);
+}
+
+.step-header-mobile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step-icon-mobile {
+  font-size: 2rem;
+}
+
+.step-number-mobile {
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.step-title-mobile {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.step-content-mobile {
+  margin-left: 3.5rem;
+}
+
+.step-description-mobile {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.step-details-mobile {
+  color: #999;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.step-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #333 50%, transparent 100%);
+  margin: 1.5rem 0;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .workflow-timeline {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .workflow-step-container {
+    width: 100%;
+  }
+  
+  .step-connector {
+    position: static;
+    transform: none;
+    margin: 1rem 0;
+    flex-direction: column;
+  }
+  
+  .connector-line {
+    width: 2px;
+    height: 2rem;
+  }
+  
+  .connector-arrow {
+    transform: rotate(90deg);
+    margin-left: 0;
+    margin-top: -0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .workflow-container {
+    display: none;
+  }
+  
+  .workflow-mobile {
+    display: block;
+    margin-top: 2rem;
+  }
+  
+  .workflow-section {
+    padding: 2rem 0;
+  }
+  
+  .step-content-mobile {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .step-header-mobile {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Team Section */
+.team-section {
+  margin-top: 3rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.team-member {
+  background: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  border-color: #ffffff;
+  transform: translateY(-5px);
+}
+
+.member-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.team-note {
+  color: #ccc;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .status-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
